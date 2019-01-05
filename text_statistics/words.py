@@ -1,6 +1,6 @@
 class Words:
     def __init__(self, response):
-        self.word_count = len(response)
+        self.word_count = len(response.split())
 
     @property
     def description(self):

@@ -1,18 +1,17 @@
 class MostFrequent:
     def __init__(self, response, result_count = 10):
-        self.response = response
+        self.response = response.split(" ")
         self.result_count = result_count
 
         self.word_count = self._get_populated_word_count()
 
     def _get_populated_word_count(self):
         word_count = dict()
-        for line in self.response:
-            for word in line.split():
-                if type(word) is bytes:
-                    word = word.decode()
-                word = word.lower()
-                word_count[word] = word_count.get(word, 0) + 1
+        for word in self.response:
+            word = word.lower()
+            word_count[word] = word_count.get(word, 0) + 1
+
+        del word_count[""]
         return word_count
 
     @property

@@ -1,4 +1,4 @@
-class Words:
+class WordCount:
     def __init__(self, response):
         self.word_count = len(response.split())
 

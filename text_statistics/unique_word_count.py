@@ -1,4 +1,4 @@
-class UniqueWords:
+class UniqueWordCount:
     def __init__(self, response):
         self.unique_word_count = len(set(response.split()))
 
